@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use Illuminate\Support\Facades\Auth;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -73,5 +74,16 @@ class AuthController extends Controller
     public function loginUsername()
     {
         return property_exists($this, 'username') ? $this->username : 'name';
+    }
+
+    public function redirectPath()
+    {
+        if(Auth::user()->role_id == 1) $this->redirectTo = '/home';
+        else if(Auth::user()->role_id == 2) $this->redirectTo = '/admin';
+
+        if (property_exists($this, 'redirectPath')) {
+            return $this->redirectPath;
+        }
+        return property_exists($this, 'redirectTo') ? $this->redirectTo : '/home';
     }
 }

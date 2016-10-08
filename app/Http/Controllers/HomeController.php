@@ -3,18 +3,22 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
+use App\Models\Task;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
+    protected $request;
+
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Request $request)
     {
-        $this->middleware('auth');
+        $this->request = $request;
     }
 
     /**
@@ -25,5 +29,22 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
+    }
+
+    public function store(Requests\TaskPublishRequest $taskPublishRequest, Task $task)
+    {
+        //dd($this->request->all());
+        $task = $task->createTask($this->request);
+        return redirect()->route('home.success')->with('status', 'ok');
+    }
+
+    public function success()
+    {
+        if (!session('status'))
+        {
+            return redirect()->route('home.index');
+        }
+
+        return view('home.success');
     }
 }

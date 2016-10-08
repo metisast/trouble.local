@@ -17,4 +17,45 @@ Route::get('/', function () {
 
 Route::auth();
 
-Route::get('/home', 'HomeController@index');
+Route::group(['middleware' => 'auth'], function(){
+
+    Route::get('/home', [
+        'uses' => 'HomeController@index',
+        'as' => 'home.index'
+    ]);
+
+    Route::post('/home', [
+        'uses' => 'HomeController@store',
+        'as' => 'home.store'
+    ]);
+
+    Route::get('/success', [
+        'uses' => 'HomeController@success',
+        'as' => 'home.success'
+    ]);
+});
+
+
+Route::group(['middleware' => 'admin'], function(){
+
+    Route::get('/admin', [
+        'uses' => 'AdminController@index',
+        'as' => 'admin.index'
+    ]);
+
+    Route::get('/admin/{id}/show', [
+        'uses' => 'AdminController@show',
+        'as' => 'admin.show'
+    ]);
+
+    Route::get('/admin/{id}/success', [
+        'uses' => 'AdminController@success',
+        'as' => 'admin.success'
+    ]);
+
+    Route::get('/admin/{id}/soft-delete', [
+        'uses' => 'AdminController@softDelete',
+        'as' => 'admin.softDelete'
+    ]);
+
+});

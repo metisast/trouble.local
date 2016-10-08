@@ -15,17 +15,17 @@ class TaskTypesSeeder extends Seeder
 
         DB::table('task_types')->insert([
             [
-                'title' => 'Ñåòü',
+                'title' => 'Ð¡ÐµÑ‚ÑŒ',
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now(),
             ],
             [
-                'title' => 'Ñîôò',
+                'title' => 'Ð¡Ð¾Ñ„Ñ‚',
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now(),
             ],
             [
-                'title' => 'Êîìïüþòåðû',
+                'title' => 'ÐšÐ¾Ð¼Ð¿ÑŒÑŽÑ‚ÐµÑ€Ñ‹',
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now(),
             ]

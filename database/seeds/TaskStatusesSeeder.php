@@ -15,17 +15,17 @@ class TaskStatusesSeeder extends Seeder
 
         DB::table('task_statuses')->insert([
             [
-                'title' => 'Àêòèâíàÿ',
+                'title' => 'ÐÐºÑ‚Ð¸Ð²Ð½Ð°Ñ',
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now(),
             ],
             [
-                'title' => 'Çàâåðøåíà',
+                'title' => 'Ð—Ð°Ð²ÐµÑ€ÑˆÐµÐ½Ð°',
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now(),
             ],
             [
-                'title' => 'Óäàëåíà',
+                'title' => 'Ð£Ð´Ð°Ð»ÐµÐ½Ð°',
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now(),
             ]
