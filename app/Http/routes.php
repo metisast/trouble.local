@@ -43,6 +43,16 @@ Route::group(['middleware' => 'admin'], function(){
         'as' => 'admin.index'
     ]);
 
+    Route::get('/admin/success', [
+        'uses' => 'AdminController@indexSuccess',
+        'as' => 'admin.index.success'
+    ]);
+
+    Route::get('/admin/trash', [
+        'uses' => 'AdminController@indexTrash',
+        'as' => 'admin.index.trash'
+    ]);
+
     Route::get('/admin/{id}/show', [
         'uses' => 'AdminController@show',
         'as' => 'admin.show'

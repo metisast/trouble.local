@@ -27,6 +27,22 @@ class AdminController extends Controller
         ]);
     }
 
+    public function indexSuccess()
+    {
+        return view('admin.indexSuccess',[
+            'i' => $i = 1,
+            'tasks' => $this->task->getSuccessTasks()
+        ]);
+    }
+
+    public function indexTrash()
+    {
+        return view('admin.indexTrash',[
+            'i' => $i = 1,
+            'tasks' => $this->task->getActiveTasks()
+        ]);
+    }
+
     public function show($id)
     {
         return view('admin.show',[

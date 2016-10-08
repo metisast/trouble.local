@@ -51,7 +51,9 @@
                         @if(Auth::user()->role_id == 1)
                             <li><a href="{{ url('/home') }}">Добавить задачу</a></li>
                         @elseif(Auth::user()->role_id == 2)
-                            <li><a href="{{ route('admin.index') }}">Все задачи</a></li>
+                            <li><a href="{{ route('admin.index') }}">Активные</a></li>
+                            <li><a href="{{ route('admin.index.success') }}">Выполненные</a></li>
+                            <li><a href="{{ route('admin.index.trash') }}">Корзина</a></li>
                         @endif
                     @endif
                 </ul>

@@ -37,12 +37,7 @@
 
                             <div class="form-group{{ $errors->has('task_type_id') ? ' has-error' : '' }} col-xs-12">
                                 <div class="col-md-12">
-                                    <select name="task_type_id" class="form-control">
-                                        <option value="">Выберите тип проблемы</option>
-                                        <option value="1">Сеть</option>
-                                        <option value="2">Софт</option>
-                                        <option value="3">Компьютеры</option>
-                                    </select>
+                                    {!! Helpers::select($taskTypes, 'title', old('task_type_id'), 'Выберите тип проблемы', ['class' => 'form-control', 'name' => 'task_type_id'] ) !!}
 
                                     @if ($errors->has('task_type_id'))
                                         <span class="help-block">
@@ -54,12 +49,7 @@
 
                             <div class="form-group{{ $errors->has('room_id') ? ' has-error' : '' }} col-xs-12">
                                 <div class="col-md-12">
-                                    <select name="room_id" class="form-control">
-                                        <option value="">Выберите аудиторию</option>
-                                        <option value="1">308</option>
-                                        <option value="2">305</option>
-                                        <option value="3">304</option>
-                                    </select>
+                                    {!! Helpers::select($rooms, 'title', old('room_id'), 'Выберите аудиторию', ['class' => 'form-control', 'name' => 'room_id'] ) !!}
 
                                     @if ($errors->has('room_id'))
                                         <span class="help-block">

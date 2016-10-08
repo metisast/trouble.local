@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
+use App\Models\Room;
 use App\Models\Task;
+use App\Models\TaskType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -26,9 +28,12 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(TaskType $taskType, Room $room)
     {
-        return view('home');
+        return view('home',[
+            'taskTypes' => $taskType->getAllTypes(),
+            'rooms' => $room->getAllRooms()
+        ]);
     }
 
     public function store(Requests\TaskPublishRequest $taskPublishRequest, Task $task)
