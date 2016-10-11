@@ -44,6 +44,11 @@ class Task extends Model
         return parent::where('task_status_id', '=', 2)->orderBy('id', 'DESC')->get();
     }
 
+    static public function getSoftDeleteTasks()
+    {
+        return parent::where('task_status_id', '=', 3)->orderBy('id', 'DESC')->get();
+    }
+
     static public function getTaskById($id)
     {
         return parent::findOrFail($id);
@@ -65,5 +70,10 @@ class Task extends Model
         $task->save();
 
         return $task;
+    }
+
+    static public function deleteTask($id)
+    {
+        return parent::destroy($id);
     }
 }

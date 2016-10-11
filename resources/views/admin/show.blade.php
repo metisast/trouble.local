@@ -31,6 +31,12 @@
                                 <i class="glyphicon glyphicon-trash"></i> В корзину
                             </a>
                         @endif
+                        @if($task->task_status_id == 3)
+                            <h4>Действия</h4>
+                            <a href="{{ route('admin.delete', $task->id) }}" class="btn btn-danger">
+                                <i class="glyphicon glyphicon-trash"></i> Удалить навсегда
+                            </a>
+                        @endif
                     </div>
                 </div>
             </div>

@@ -39,7 +39,7 @@ class AdminController extends Controller
     {
         return view('admin.indexTrash',[
             'i' => $i = 1,
-            'tasks' => $this->task->getActiveTasks()
+            'tasks' => $this->task->getSoftDeleteTasks()
         ]);
     }
 
@@ -62,5 +62,12 @@ class AdminController extends Controller
         $this->task->softDeleteTask($id);
 
         return redirect()->route('admin.index')->with(['status' => 'trash']);
+    }
+
+    public function delete($id)
+    {
+        $this->task->deleteTask($id);
+
+        return redirect()->route('admin.index.trash')->with(['status' => 'ok']);
     }
 }

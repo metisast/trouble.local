@@ -5,10 +5,10 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Админ панель</div>
+                    <div class="panel-heading">Корзина</div>
 
                     <div class="panel-body">
-                        Ваши задачи на сегодня
+
                     </div>
                 </div>
             </div>
@@ -16,12 +16,7 @@
                 @if (session('status') == 'ok')
                     <div class="alert alert-success alert-dismissible" role="alert">
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        Задача успешно выполнена!
-                    </div>
-                @elseif(session('status') == 'trash')
-                    <div class="alert alert-danger alert-dismissible" role="alert">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        Задача добавлена в корзину!
+                        Задача успешно удалена из корзины!
                     </div>
                 @endif
             </div>
@@ -33,7 +28,7 @@
                     @endforeach
                 </div>
                 @else
-                    <div class="alert alert-success" role="alert">Нет активных задач</div>
+                    <div class="alert alert-success" role="alert">Корзина пуста</div>
                 @endif
             </div>
         </div>

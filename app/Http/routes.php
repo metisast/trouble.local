@@ -68,4 +68,9 @@ Route::group(['middleware' => 'admin'], function(){
         'as' => 'admin.softDelete'
     ]);
 
+    Route::get('/admin/{id}/delete', [
+        'uses' => 'AdminController@delete',
+        'as' => 'admin.delete'
+    ]);
+
 });

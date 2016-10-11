@@ -13,19 +13,6 @@
                 </div>
             </div>
             <div class="col-md-10 col-md-offset-1">
-                @if (session('status') == 'ok')
-                    <div class="alert alert-success alert-dismissible" role="alert">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        Задача успешно выполнена!
-                    </div>
-                @elseif(session('status') == 'trash')
-                    <div class="alert alert-danger alert-dismissible" role="alert">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        Задача добавлена в корзину!
-                    </div>
-                @endif
-            </div>
-            <div class="col-md-10 col-md-offset-1">
                 @if(count($tasks) > 0)
                 <div class="list-group">
                     @foreach($tasks as $task)
