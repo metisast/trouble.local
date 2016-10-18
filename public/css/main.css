@@ -1,0 +1,27 @@
+.task-item{
+    background: #f0f0f0;
+    border-radius: 3px;
+    display: inline-block;
+    width: 100%;
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    border: 1px solid #ddd;
+    height: 50px;
+}
+.task-item header{
+    font-size: 22px;
+    text-align: center;
+    line-height: 50px;
+}
+.task-item article{
+    line-height: 60px;
+    text-align: right;
+}
+.task-item article a{
+    display: block;
+}
+.task-item.active{
+    background: #F44336;
+}
+.task-item.active header, .task-item.active article a{
+    color: #fff;
+}

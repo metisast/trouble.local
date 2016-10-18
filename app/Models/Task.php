@@ -23,7 +23,7 @@ class Task extends Model
     /* Queries */
     static public function createTask($request)
     {
-        parent::create([
+        return parent::create([
             /*'user_id' => Auth::user()->id,*/
             /*'user_name' => $request->get('user_name'),
             'email' => $request->get('email'),

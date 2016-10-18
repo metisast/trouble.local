@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\NewTaskAdded;
 use App\Http\Requests;
 use App\Models\Room;
 use App\Models\Task;
@@ -47,6 +48,11 @@ class HomeController extends Controller
         });*/
 
         $task = $task->createTask($this->request);
+
+        event(
+            new NewTaskAdded($task)
+        );
+
         return redirect()->route('home.success')->with('status', 'ok');
     }
 

@@ -8,8 +8,8 @@
                 <div class="panel-heading">Добро пожаловать</div>
 
                 <div class="panel-body">
-                    Есть проблема, напишите нам!
-                        <a href="/home" class="btn btn-success">Добавить задачу</a>
+                    Есть проблема?
+                        <a href="/home" class="btn btn-success">Потереть лампу</a>
                 </div>
             </div>
         </div>

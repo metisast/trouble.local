@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\NewTaskAdded;
 use App\Models\Task;
 use Illuminate\Http\Request;
 
@@ -50,9 +51,10 @@ class AdminController extends Controller
         ]);
     }
 
+    /* Added new task */
     public function success($id)
     {
-        $this->task->checkedTask($id);
+        $check = $this->task->checkedTask($id);
 
         return redirect()->route('admin.index')->with(['status' => 'ok']);
     }

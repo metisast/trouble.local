@@ -28,13 +28,24 @@
             <div class="col-md-10 col-md-offset-1">
                 @if(count($tasks) > 0)
                 <div class="list-group">
-                    @foreach($tasks as $task)
-                        <div class="col-md-3">
-                            <section class="task-item">
-                                {{ $task->rooms['title'] }}
-                            </section>
-                        </div>
-                    @endforeach
+                    <div class="row">
+                        @foreach($tasks as $task)
+                            <div class="col-md-3 col-xs-6">
+                                <section class="task-item active">
+                                    <div class="col-md-6 col-xs-6">
+                                        <header>
+                                            {{ $task->rooms['title'] }}
+                                        </header>
+                                    </div>
+                                    <div class="col-md-6 col-xs-6">
+                                        <article>
+                                            <a href="{{ route('admin.success', $task->id) }}"><i class="fa fa-check-square-o fa-2x"></i></a>
+                                        </article>
+                                    </div>
+                                </section>
+                            </div>
+                        @endforeach
+                    </div>
                 </div>
                 @else
                     <div class="alert alert-success" role="alert">Нет активных задач</div>
