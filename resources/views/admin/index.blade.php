@@ -30,7 +30,7 @@
                 <div class="list-group">
                     <div class="row" id="task-block">
                         @foreach($tasks as $task)
-                            <div class="col-md-3 col-xs-6 task-item-parent task-item-{{ $task->id }}">
+                            <div class="col-md-3 col-xs-6 task-item-{{ $task->id }}">
                                 <section class="task-item active">
                                     <div class="col-md-6 col-xs-6">
                                         <header>

@@ -36,8 +36,9 @@ function prependTask(data){
 }
 
 function deleteTask(id){
-    var taskItemParent = $('.task-item-parent');
-    console.log(taskItemParent);
+    var itemId = '.task-item-'+id;
+    var taskItem = $(document).find(itemId);
+    taskItem.fadeOut('fast');
 }
 
 socket.on('task:show', function(data){
