@@ -7,8 +7,8 @@
             <div class="col-md-6 col-md-offset-3">
                 @if (session('status'))
                     <div class="alert alert-success">
-                        Задача успешно добавлена!
-                        <a href="{{ route('home.index') }}">Добавить еще</a>
+                        Летим на помощь!
+                        <a href="{{ route('home.index') }}">Не прилетел?</a>
                     </div>
                 @endif
             </div>

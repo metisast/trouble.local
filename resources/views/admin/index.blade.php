@@ -8,7 +8,7 @@
                     <div class="panel-heading">Админ панель</div>
 
                     <div class="panel-body">
-                        Ваши задачи на сегодня
+                        Запросы на сегодня
                     </div>
                 </div>
             </div>
@@ -29,7 +29,11 @@
                 @if(count($tasks) > 0)
                 <div class="list-group">
                     @foreach($tasks as $task)
-                        <a href="{{ route('admin.show', $task->id) }}" class="list-group-item">{{$i++.'. '. $task->description }}</a>
+                        <div class="col-md-3">
+                            <section class="task-item">
+                                {{ $task->rooms['title'] }}
+                            </section>
+                        </div>
                     @endforeach
                 </div>
                 @else

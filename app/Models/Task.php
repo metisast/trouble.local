@@ -24,12 +24,12 @@ class Task extends Model
     static public function createTask($request)
     {
         parent::create([
-            'user_id' => Auth::user()->id,
-            'user_name' => $request->get('user_name'),
+            /*'user_id' => Auth::user()->id,*/
+            /*'user_name' => $request->get('user_name'),
             'email' => $request->get('email'),
-            'task_type_id' => $request->get('task_type_id'),
+            'task_type_id' => $request->get('task_type_id'),*/
             'room_id' => $request->get('room_id'),
-            'description' => $request->get('description'),
+            /*'description' => $request->get('description'),*/
             'task_status_id' => 1
         ]);
     }

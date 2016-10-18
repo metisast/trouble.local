@@ -15,24 +15,26 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/home', [
+    'uses' => 'HomeController@index',
+    'as' => 'home.index'
+]);
+
+Route::post('/home', [
+    'uses' => 'HomeController@store',
+    'as' => 'home.store'
+]);
+
+Route::get('/success', [
+    'uses' => 'HomeController@success',
+    'as' => 'home.success'
+]);
+
 Route::auth();
 
 Route::group(['middleware' => 'auth'], function(){
 
-    Route::get('/home', [
-        'uses' => 'HomeController@index',
-        'as' => 'home.index'
-    ]);
 
-    Route::post('/home', [
-        'uses' => 'HomeController@store',
-        'as' => 'home.store'
-    ]);
-
-    Route::get('/success', [
-        'uses' => 'HomeController@success',
-        'as' => 'home.success'
-    ]);
 });
 
 

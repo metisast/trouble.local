@@ -8,6 +8,7 @@ use App\Models\Task;
 use App\Models\TaskType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
@@ -39,6 +40,12 @@ class HomeController extends Controller
     public function store(Requests\TaskPublishRequest $taskPublishRequest, Task $task)
     {
         //dd($this->request->all());
+
+        /*Mail::send('emails.welcome', array('key' => 'value'), function($message)
+        {
+            $message->to('metis_ast@mail.ru', 'Джон Смит')->subject('Привет!');
+        });*/
+
         $task = $task->createTask($this->request);
         return redirect()->route('home.success')->with('status', 'ok');
     }

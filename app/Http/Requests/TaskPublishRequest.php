@@ -24,11 +24,11 @@ class TaskPublishRequest extends Request
     public function rules()
     {
         return [
-            'user_name' => 'required',
-            'email' => 'required|email',
+            /*'user_name' => 'required',
+            'email' => 'required|email',*/
             'room_id' => 'required',
-            'description' => 'required|max:1000',
-            'task_type_id' => 'required'
+            /*'description' => 'required|max:1000',
+            'task_type_id' => 'required'*/
         ];
     }
 }
