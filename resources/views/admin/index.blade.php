@@ -28,9 +28,9 @@
             <div class="col-md-10 col-md-offset-1">
                 @if(count($tasks) > 0)
                 <div class="list-group">
-                    <div class="row">
+                    <div class="row" id="task-block">
                         @foreach($tasks as $task)
-                            <div class="col-md-3 col-xs-6">
+                            <div class="col-md-3 col-xs-6 task-item-parent task-item-{{ $task->id }}">
                                 <section class="task-item active">
                                     <div class="col-md-6 col-xs-6">
                                         <header>
@@ -48,6 +48,9 @@
                     </div>
                 </div>
                 @else
+                    <div class="row" id="task-block">
+
+                    </div>
                     <div class="alert alert-success" role="alert">Нет активных задач</div>
                 @endif
             </div>

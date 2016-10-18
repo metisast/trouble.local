@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "79040868fe0e7e8baf4516af1f606df5",
-    "content-hash": "ec23c3399e21f8fd1c8145f73ffc6e1a",
+    "hash": "71b66120568c84fffd9d22ec6d095a38",
+    "content-hash": "6d99d18e21791779cb0abe3ffb4d3ee9",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -556,20 +556,20 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.28",
+            "version": "1.0.29",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "a9663643ff2d16d7f66ed1e0d3212c5491bc9044"
+                "reference": "b732cc946c48cf102ddffd41ffcd54901a28ccdb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/a9663643ff2d16d7f66ed1e0d3212c5491bc9044",
-                "reference": "a9663643ff2d16d7f66ed1e0d3212c5491bc9044",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/b732cc946c48cf102ddffd41ffcd54901a28ccdb",
+                "reference": "b732cc946c48cf102ddffd41ffcd54901a28ccdb",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.4.0"
+                "php": ">=5.6.0"
             },
             "conflict": {
                 "league/flysystem-sftp": "<1.0.6"
@@ -635,7 +635,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2016-10-07 12:20:37"
+            "time": "2016-10-17 23:14:19"
         },
         {
             "name": "monolog/monolog",
@@ -906,6 +906,56 @@
             "time": "2016-03-18 20:34:03"
         },
         {
+            "name": "predis/predis",
+            "version": "v1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nrk/predis.git",
+                "reference": "f0210e38881631afeafb56ab43405a92cafd9fd1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nrk/predis/zipball/f0210e38881631afeafb56ab43405a92cafd9fd1",
+                "reference": "f0210e38881631afeafb56ab43405a92cafd9fd1",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.9"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.8"
+            },
+            "suggest": {
+                "ext-curl": "Allows access to Webdis when paired with phpiredis",
+                "ext-phpiredis": "Allows faster serialization and deserialization of the Redis protocol"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Predis\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniele Alessandri",
+                    "email": "suppakilla@gmail.com",
+                    "homepage": "http://clorophilla.net"
+                }
+            ],
+            "description": "Flexible and feature-complete Redis client for PHP and HHVM",
+            "homepage": "http://github.com/nrk/predis",
+            "keywords": [
+                "nosql",
+                "predis",
+                "redis"
+            ],
+            "time": "2016-06-16 16:22:20"
+        },
+        {
             "name": "psr/log",
             "version": "1.0.2",
             "source": {
@@ -1023,6 +1073,50 @@
                 "shell"
             ],
             "time": "2016-03-09 05:03:14"
+        },
+        {
+            "name": "pusher/pusher-php-server",
+            "version": "v2.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pusher/pusher-http-php.git",
+                "reference": "cdc11530c6f97eab76850d8ead6c513eeeccc37a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pusher/pusher-http-php/zipball/cdc11530c6f97eab76850d8ead6c513eeeccc37a",
+                "reference": "cdc11530c6f97eab76850d8ead6c513eeeccc37a",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=5.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "lib/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Library for interacting with the Pusher REST API",
+            "homepage": "https://github.com/pusher/pusher-php-server",
+            "keywords": [
+                "events",
+                "php-pusher-server",
+                "publish",
+                "pusher",
+                "realtime",
+                "rest",
+                "trigger"
+            ],
+            "time": "2016-08-23 09:07:29"
         },
         {
             "name": "swiftmailer/swiftmailer",

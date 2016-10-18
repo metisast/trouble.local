@@ -7,7 +7,7 @@ use App\Models\Task;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 
-class NewTaskAdded extends Event implements ShouldBroadcast
+class DeleteTaskEvent extends Event implements ShouldBroadcast
 {
     use SerializesModels;
 
@@ -37,12 +37,11 @@ class NewTaskAdded extends Event implements ShouldBroadcast
     {
         return [
             'id' => $this->task->id,
-            'room_title' => $this->task->rooms->title
         ];
     }
 
     public function broadcastAs()
     {
-        return 'show';
+        return 'delete';
     }
 }
