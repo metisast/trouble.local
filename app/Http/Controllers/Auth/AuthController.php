@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
-use Illuminate\Support\Facades\Auth;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -51,7 +50,7 @@ class AuthController extends Controller
     {
         return Validator::make($data, [
             'name' => 'required|max:255',
-            /*'email' => 'required|email|max:255|unique:users',*/
+            'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
         ]);
     }
@@ -69,21 +68,5 @@ class AuthController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
-    }
-
-    public function loginUsername()
-    {
-        return property_exists($this, 'username') ? $this->username : 'name';
-    }
-
-    public function redirectPath()
-    {
-        if(Auth::user()->role_id == 1) $this->redirectTo = '/home';
-        else if(Auth::user()->role_id == 2) $this->redirectTo = '/admin';
-
-        if (property_exists($this, 'redirectPath')) {
-            return $this->redirectPath;
-        }
-        return property_exists($this, 'redirectTo') ? $this->redirectTo : '/home';
     }
 }
