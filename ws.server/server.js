@@ -21,6 +21,13 @@ redis.on("error", function(err){
     console.log(err);
 });
 
+io.on('connection', function(socket){
+    console.log('New connection ' + socket.id);
+});
+
+///console.log('New connection ' + socket.id);
+
+//socket.send('Message from server');
 
 /*var io = require('socket.io')(6001);*/
 
