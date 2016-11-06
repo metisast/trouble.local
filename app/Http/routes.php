@@ -11,14 +11,9 @@
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
-});
-
-Route::get('/event', function () {
-    event(
-        new \App\Events\TestEvent()
-    );
 });
 
 Route::get('/home', [
@@ -80,5 +75,10 @@ Route::group(['middleware' => 'admin'], function(){
         'uses' => 'AdminController@delete',
         'as' => 'admin.delete'
     ]);
+});
+
+Route::group(['middleware' => ['cors']], function (){
+
+    Route::resource('api/task', 'API\TaskController');
 
 });
