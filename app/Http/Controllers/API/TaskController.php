@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Events\DeleteTaskEvent;
 use App\Models\Task;
 use Illuminate\Http\Request;
 
@@ -41,7 +42,8 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        $test = $request->get('room_id');
+        return response()->json(['test' => $test]);
     }
 
     /**
@@ -86,6 +88,14 @@ class TaskController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $task = Task::checkedTask($id);
+
+        event(
+            new DeleteTaskEvent($task)
+        );
+
+        return response()->json([
+            'status' => 'deleted'
+        ]);
     }
 }
