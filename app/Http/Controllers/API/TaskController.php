@@ -25,7 +25,8 @@ class TaskController extends Controller
         {
             $taskAr[] = [
                 'id' => $task->id,
-                'room_name' => $task->rooms->title
+                'room_name' => $task->rooms->title,
+                'created_at' => date_format($task->created_at, 'd-m-Y H:i:s')
             ];
         }
 

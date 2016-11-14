@@ -27,8 +27,8 @@
       <file leaf-file-name="TaskController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/TaskController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="27" column="26" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
+            <state relative-caret-position="288">
+              <caret line="28" column="69" selection-start-line="28" selection-start-column="69" selection-end-line="28" selection-end-column="69" />
               <folding>
                 <element signature="e#44#75#0#PHP" expanded="true" />
               </folding>
@@ -274,7 +274,7 @@
       <workItem from="1478493982312" duration="1349000" />
       <workItem from="1478581907447" duration="1987000" />
       <workItem from="1478948379740" duration="877000" />
-      <workItem from="1479121686390" duration="835000" />
+      <workItem from="1479121686390" duration="2039000" />
     </task>
     <task id="LOCAL-00001" summary="installed barryvdh/laravel-cors">
       <created>1478401634238</created>
@@ -297,11 +297,18 @@
       <option name="project" value="LOCAL" />
       <updated>1478582031140</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Edited API tasks file">
+      <created>1479122534164</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1479122534164</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10866000" />
+    <option name="totallyTimeSpent" value="12070000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="49" y="24" width="1317" height="744" extended-state="6" />
@@ -361,7 +368,8 @@
     <MESSAGE value="installed barryvdh/laravel-cors" />
     <MESSAGE value="create api" />
     <MESSAGE value="Edited room seeder" />
-    <option name="LAST_COMMIT_MESSAGE" value="Edited room seeder" />
+    <MESSAGE value="Edited API tasks file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Edited API tasks file" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -753,8 +761,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/TaskController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="27" column="26" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
+        <state relative-caret-position="288">
+          <caret line="28" column="69" selection-start-line="28" selection-start-column="69" selection-end-line="28" selection-end-column="69" />
           <folding>
             <element signature="e#44#75#0#PHP" expanded="true" />
           </folding>
