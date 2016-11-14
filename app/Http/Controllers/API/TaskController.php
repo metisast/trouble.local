@@ -19,8 +19,18 @@ class TaskController extends Controller
      */
     public function index()
     {
+        $taskAr = [];
+        $tasks = Task::getActiveTasks();
+        foreach ($tasks as $task)
+        {
+            $taskAr[] = [
+                'id' => $task->id,
+                'room_name' => $task->rooms->title
+            ];
+        }
+
         return response()->json([
-            'tasks' => Task::getActiveTasks()
+            'tasks' => $taskAr
         ]);
     }
 
