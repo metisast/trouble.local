@@ -53,8 +53,16 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
-        $test = $request->get('room_id');
-        return response()->json(['test' => $test]);
+
+        $check = Task::checkedTask($request->get('task_id'));
+
+        event(
+            new DeleteTaskEvent($check)
+        );
+
+        return response()->json([
+            'status' => 'success'
+        ]);
     }
 
     /**

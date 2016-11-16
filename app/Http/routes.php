@@ -78,7 +78,6 @@ Route::group(['middleware' => 'admin'], function(){
 
 Route::group(['middleware' => ['api']], function (){
 
-    //$router->post('api', 'API\TaskController@store');
     Route::resource('api/task', 'API\TaskController');
 
 });
