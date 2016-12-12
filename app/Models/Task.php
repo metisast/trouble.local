@@ -88,10 +88,11 @@ class Task extends Model
     {
         //return DB::select("SELECT `room_id`, COUNT(`room_id`) AS cnt FROM `tasks` WHERE `created_at` >= '$dateFrom' AND `task_status_id` = '2' GROUP BY `room_id`");
 
-        return parent::select('room_id', DB::raw('COUNT(room_id) as cnt'))
+        return parent::select('room_id', 'created_at', DB::raw('COUNT(room_id) as cnt'))
             ->where('created_at', '>=', $dateFrom)
             ->where('created_at', '<=', $dateBy)
             ->where('task_status_id', '=', 2)
+            ->orderBy('cnt', 'DESC')
             ->groupBy('room_id')->get();
     }
 }

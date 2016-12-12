@@ -28,7 +28,8 @@ class AdminStatController extends Controller
             foreach ($result as $r){
                 $data[] = [
                     'cnt' => $r->cnt,
-                    'room_title' => $r->rooms->title
+                    'room_title' => $r->rooms->title,
+                    'created_at' => date("d.m.Y", strtotime($r->created_at))
                 ];
             }
 
