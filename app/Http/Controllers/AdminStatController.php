@@ -29,7 +29,6 @@ class AdminStatController extends Controller
                 $data[] = [
                     'cnt' => $r->cnt,
                     'room_title' => $r->rooms->title,
-                    'created_at' => date("d.m.Y", strtotime($r->created_at))
                 ];
             }
 

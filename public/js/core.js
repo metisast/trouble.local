@@ -19,7 +19,7 @@
                 panelBody.html('');
                 for(var i = 0; i < data.rooms.length; i++){
                     panelBody.append('<p>' + data.rooms[i].room_title + ' количество вызовов - ' +
-                        data.rooms[i].cnt + ' | ' + data.rooms[i].created_at + '</p>');
+                        data.rooms[i].cnt + '</p>');
                 }
 
                 console.log(data);
