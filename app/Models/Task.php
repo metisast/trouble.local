@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class Task extends Model
 {
@@ -83,8 +84,14 @@ class Task extends Model
     }
 
     /* Stat searches */
-    static public function SearchStat($dateFrom, $dateBy)
+    static public function SearchStatGroup($dateFrom, $dateBy)
     {
-        return parent::where('created_at', '>=', $dateFrom)->where('task_status_id', '=', 2)->get();
+        //return DB::select("SELECT `room_id`, COUNT(`room_id`) AS cnt FROM `tasks` WHERE `created_at` >= '$dateFrom' AND `task_status_id` = '2' GROUP BY `room_id`");
+
+        return parent::select('room_id', DB::raw('COUNT(room_id) as cnt'))
+            ->where('created_at', '>=', $dateFrom)
+            ->where('created_at', '<=', $dateBy)
+            ->where('task_status_id', '=', 2)
+            ->groupBy('room_id')->get();
     }
 }

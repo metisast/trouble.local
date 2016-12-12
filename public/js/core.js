@@ -4,6 +4,7 @@
     var btnSearch = $('#send');
     var formStat = $('#stat');
     var formUrl = formStat.data('url');
+    var panelBody = $('.panel-body');
 
     btnSearch.click(function () {
         var data = formStat.serialize();
@@ -15,6 +16,11 @@
                 //clearError
                 var clearError = formStat.find('.has-error').removeClass('has-error');
                 clearError.find('.control-label').html('');
+                panelBody.html('');
+                for(var i = 0; i < data.rooms.length; i++){
+                    panelBody.append('<p>' + data.rooms[i].room_title + ' количество вызовов - ' +
+                        data.rooms[i].cnt + '</p>');
+                }
 
                 console.log(data);
             },
