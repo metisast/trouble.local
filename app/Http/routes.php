@@ -75,9 +75,14 @@ Route::group(['middleware' => 'admin'], function(){
         'as' => 'admin.delete'
     ]);
 
+    /* Statistics */
     Route::get('/admin/stat', [
         'uses' => 'AdminStatController@index',
         'as' => 'admin.stat'
+    ]);
+    Route::post('/admin/stat', [
+        'uses' => 'AdminStatController@search',
+        'as' => 'admin.stat.search'
     ]);
 });
 

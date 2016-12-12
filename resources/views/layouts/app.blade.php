@@ -94,10 +94,12 @@
     <script type="text/javascript" src="/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
     <script type="text/javascript">
         $(function () {
-            $('#datetimepicker6').datetimepicker();
+            $('#datetimepicker6').datetimepicker({
+                locale: 'ru',
+            });
             $('#datetimepicker7').datetimepicker({
                 useCurrent: false, //Important! See issue #1075
-                locale: 'ru'
+                locale: 'ru',
             });
             $("#datetimepicker6").on("dp.change", function (e) {
                 $('#datetimepicker7').data("DateTimePicker").minDate(e.date);
@@ -107,5 +109,6 @@
             });
         });
     </script>
+    <script src="/js/core.js"></script>
 </body>
 </html>

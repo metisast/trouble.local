@@ -81,4 +81,10 @@ class Task extends Model
     {
         return parent::destroy($id);
     }
+
+    /* Stat searches */
+    static public function SearchStat($dateFrom, $dateBy)
+    {
+        return parent::where('created_at', '>=', $dateFrom)->where('task_status_id', '=', 2)->get();
+    }
 }
