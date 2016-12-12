@@ -8,7 +8,7 @@
                     <div class="panel-heading">Выполненные задачи</div>
 
                     <div class="panel-body">
-
+                        Общие количество выволненных задач - {{ $allTasks }}
                     </div>
                 </div>
             </div>
@@ -16,12 +16,11 @@
                 @if(count($tasks) > 0)
                 <div class="list-group">
                     @foreach($tasks as $task)
-                        <a href="{{ route('admin.show', $task->id) }}" class="list-group-item">{{$i++.'. '. $task->description }}</a>
+                        <a href="{{ route('admin.show', $task->id) }}" class="list-group-item">{{$task->rooms->title }}</a>
                     @endforeach
                 </div>
-                @else
-                    <div class="alert alert-success" role="alert">Нет активных задач</div>
                 @endif
+                {{ $tasks->links() }}
             </div>
         </div>
     </div>

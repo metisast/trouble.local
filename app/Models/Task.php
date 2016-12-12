@@ -39,9 +39,14 @@ class Task extends Model
         return parent::where('task_status_id', '=', 1)->orderBy('id', 'DESC')->get();
     }
 
-    static public function getSuccessTasks()
+    static public function getSuccessTasksByPage()
     {
-        return parent::where('task_status_id', '=', 2)->orderBy('id', 'DESC')->get();
+        return parent::where('task_status_id', '=', 2)->orderBy('id', 'DESC')->paginate(10);
+    }
+
+    static public function getAllSuccessTasks()
+    {
+        return parent::where('task_status_id', '=', 2)->count();
     }
 
     static public function getSoftDeleteTasks()

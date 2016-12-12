@@ -74,6 +74,11 @@ Route::group(['middleware' => 'admin'], function(){
         'uses' => 'AdminController@delete',
         'as' => 'admin.delete'
     ]);
+
+    Route::get('/admin/stat', [
+        'uses' => 'AdminStatController@index',
+        'as' => 'admin.stat'
+    ]);
 });
 
 Route::group(['middleware' => ['api']], function (){

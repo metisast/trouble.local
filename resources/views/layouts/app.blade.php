@@ -54,7 +54,7 @@
                         @elseif(Auth::user()->role_id == 2)
                             <li><a href="{{ route('admin.index') }}">Активные</a></li>
                             <li><a href="{{ route('admin.index.success') }}">Выполненные</a></li>
-                            <li><a href="{{ route('admin.index.trash') }}">Корзина</a></li>
+                            <li><a href="{{ route('admin.stat') }}">Отчеты</a></li>
                         @endif
                     @endif
                 </ul>

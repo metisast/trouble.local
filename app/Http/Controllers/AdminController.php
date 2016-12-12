@@ -32,8 +32,8 @@ class AdminController extends Controller
     public function indexSuccess()
     {
         return view('admin.indexSuccess',[
-            'i' => $i = 1,
-            'tasks' => $this->task->getSuccessTasks()
+            'tasks' => $this->task->getSuccessTasksByPage(),
+            'allTasks' => $this->task->getAllSuccessTasks()
         ]);
     }
 
