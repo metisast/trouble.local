@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
     <link rel="stylesheet" href="/css/main.css">
-
+    <link rel="stylesheet" href="/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -89,5 +89,23 @@
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
     <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
     <script src="/js/socket.js"></script>
+    <script type="text/javascript" src="/bower_components/moment/min/moment.min.js"></script>
+    <script type="text/javascript" src="/bower_components/moment/locale/ru.js"></script>
+    <script type="text/javascript" src="/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#datetimepicker6').datetimepicker();
+            $('#datetimepicker7').datetimepicker({
+                useCurrent: false, //Important! See issue #1075
+                locale: 'ru'
+            });
+            $("#datetimepicker6").on("dp.change", function (e) {
+                $('#datetimepicker7').data("DateTimePicker").minDate(e.date);
+            });
+            $("#datetimepicker7").on("dp.change", function (e) {
+                $('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
+            });
+        });
+    </script>
 </body>
 </html>
